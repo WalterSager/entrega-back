@@ -1,0 +1,16 @@
+<!-- /src/views/profile.handlebars -->
+<div class="d-flex vh-100 justify-content-center align-items-center bg-light">
+  <div class="card shadow-sm p-4 text-center" style="min-width: 350px; max-width: 450px;">
+    <h3 class="mb-4">Perfil del Usuario</h3>
+
+    <div class="text-start">
+      <p><strong>Nombre:</strong> {{first_name}} {{last_name}}</p>
+      <p><strong>Edad:</strong> {{age}}</p>
+      <p><strong>Rol:</strong> {{role}}</p>
+    </div>
+
+    <form method="POST" action="/api/sessions/logout" class="mt-4">
+      <button type="submit" class="btn btn-outline-danger w-100">Cerrar Sesión</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<!-- /src/views/login.handlebars -->
+<div class="d-flex vh-100 justify-content-center align-items-center bg-light">
+  <div class="card shadow-sm p-4" style="min-width: 350px; max-width: 400px;">
+    <h3 class="text-center mb-4">Iniciar Sesión</h3>
+
+    <form method="POST" action="/api/sessions/login">
+      <div class="mb-3">
+        <label for="email" class="form-label">Correo electrónico</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="tucorreo@mail.com" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="********" required />
+      </div>
+
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary">Ingresar</button>
+      </div>
+    </form>
+
+    <div class="text-center mt-4">
+      <p class="mb-1">
+        <a href="/views/forgot-password" class="text-decoration-none text-muted">¿Olvidaste tu contraseña?</a>
+      </p>
+      <p>
+        ¿No tenés cuenta? <a href="/views/register" class="text-decoration-none">Registrate acá</a>
+      </p>
+    </div>
+  </div>
+</div>

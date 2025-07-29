@@ -1,0 +1,25 @@
+<!-- /src/views/products-user.handlebars -->
+<div class="container py-4">
+  <div class="row g-4">
+    {{#each products}}
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body d-flex flex-column justify-content-between">
+          <div>
+            <h5 class="card-title">{{this.title}}</h5>
+            <p class="card-text text-muted">{{this.description}}</p>
+            <p class="mb-1"><strong>Precio:</strong> ${{this.price}}</p>
+            <p class="mb-1"><strong>Stock:</strong> {{this.stock}}</p>
+            <p class="mb-3"><strong>Categoría:</strong> {{this.category}}</p>
+          </div>
+
+          <button class="btn btn-outline-primary mt-auto w-100"
+            onclick="agregarAlCarrito('{{this._id}}')">
+            Agregar al Carrito
+          </button>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>

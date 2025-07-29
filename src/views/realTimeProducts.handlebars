@@ -1,0 +1,40 @@
+<!-- /src/views/realTimeProducts.handlebars -->
+<div class="container py-4">
+  <div class="row g-4">
+    {{#each products}}
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm border-0 position-relative">
+
+        <!-- Botón de eliminación -->
+        <button class="btn btn-outline-danger btn-sm position-absolute top-0 start-0 m-2"
+          onclick='eliminarProducto("{{this._id}}")'>
+          Eliminar
+        </button>
+
+        <!-- Botón de edición -->
+        <button class="btn btn-outline-warning btn-sm position-absolute top-0 end-0 m-2"
+          onclick='editarProducto("{{this._id}}", "{{this.title}}", "{{this.description}}", "{{this.price}}", "{{this.num}}", "{{this.stock}}", "{{this.category}}")'>
+          Editar
+        </button>
+
+        <div class="card-body pt-5 pb-4">
+          <h5 class="card-title">{{this.title}}</h5>
+          <p class="card-text text-muted">{{this.description}}</p>
+          <p class="mb-1"><strong>Precio:</strong> ${{this.price}}</p>
+          <p class="mb-1"><strong>Stock:</strong> {{this.stock}}</p>
+          <p class="mb-1"><strong>Categoría:</strong> {{this.category}}</p>
+        </div>
+
+        <!-- Botón de venta -->
+        <div class="position-absolute bottom-0 end-0 m-3">
+          <button class="btn btn-outline-success btn-sm"
+            onclick="agregarAlCarrito('{{this._id}}')">
+            Agregar al Carrito
+          </button>
+        </div>
+
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>

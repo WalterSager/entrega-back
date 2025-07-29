@@ -1,0 +1,20 @@
+<!-- /src/views/403-forbidden.handlebars -->
+<div class="d-flex vh-100 justify-content-center align-items-center bg-white">
+  <div class="text-center px-4">
+    <h1 class="display-1 fw-bold text-danger">403</h1>
+    <h2 class="fw-semibold text-dark">Acceso Denegado</h2>
+
+    {{#if message}}
+      <p class="text-secondary mt-2"><em>{{message}}</em></p>
+    {{/if}}
+
+    <p class="mt-3 lead text-muted">No tenés permiso para acceder a esta página.</p>
+
+    <div class="d-flex justify-content-center gap-3 mt-4">
+      <a href="/" class="btn btn-outline-secondary">Volver al Inicio</a>
+      <form action="/api/sessions/logout" method="POST">
+        <button type="submit" class="btn btn-outline-danger">Cerrar Sesión</button>
+      </form>
+    </div>
+  </div>
+</div>
